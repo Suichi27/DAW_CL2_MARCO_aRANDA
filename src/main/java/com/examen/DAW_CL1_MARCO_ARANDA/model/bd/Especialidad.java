@@ -1,15 +1,16 @@
 package com.examen.DAW_CL1_MARCO_ARANDA.model.bd;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.ArrayList;
+import java.util.List;
 
-    @NoArgsConstructor
+
+@NoArgsConstructor
     @Getter
     @Setter
     @Entity
@@ -23,4 +24,10 @@ import lombok.Setter;
 
         @Column(name="costo")
         private Double costo;
+
+        @JsonBackReference
+        @OneToMany(mappedBy = "especialidad",
+        cascade = CascadeType.ALL, orphanRemoval = true)
+        private List<Alumno> listaalumno = new ArrayList<>();
+
 }
