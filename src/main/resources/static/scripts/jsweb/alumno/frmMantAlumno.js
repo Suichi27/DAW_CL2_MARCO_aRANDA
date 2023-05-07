@@ -17,7 +17,7 @@ $.ajax({
     })
 $("#modalNuevo").modal("show");
 
-})
+});
 
 $(document).on("click","#btnactualizar",function(){
 //alert("HolaBoton Agregar");
@@ -41,6 +41,24 @@ $.ajax({
         }
     })
 $("#modalNuevo").modal("show");
-})
+});
 
+$(document).on("click","#btnguardar",function(){
+    $.ajax({
+            type= "POST",
+            url: "/Alumno/registrarAlumno",
+            contentType :"application/json",}
+            data: JSON.stringify({
+            idalumno: $("#txtidalumno").val(),
+            apealumno: $("#txtapealumno").val(),
+            nomalumno: $("#txtnomalumno").val(),
+            idesp: $("#cboesp").val(),
+            proce:$("#txtproce").val()
+            }),
+            success: function(resultado){
+            alert(resultado.mensaje);
+            }
+    });
+    $("#modalNuevo").modal("hide")
+});
 
