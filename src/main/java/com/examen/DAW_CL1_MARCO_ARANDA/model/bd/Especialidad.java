@@ -22,5 +22,5 @@ import lombok.Setter;
         private String nomesp;
 
         @Column(name="costo")
-        private Integer costo;
+        private Double costo;
 }

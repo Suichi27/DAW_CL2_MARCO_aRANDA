@@ -6,7 +6,7 @@
 <nav th:insert="layout::menu"></nav>
 <div class="card ">
   <div class="card-header text-bg-dark mb-3">
-    Lista de Estados Salas
+    Lista de Especialidades
   </div>
   <div class="card-body">
     <table class="table">
@@ -18,11 +18,11 @@
       </tr>
       </thead>
       <tbody>
-      <tr th:each="estado :${listaEspecialidad}">
-        <td></td>
+      <tr th:each="especialidad:${listarEspecialidad}">
         <td th:text="${especialidad.idesp}"></td>
         <td th:text="${especialidad.nomesp}"></td>
-        <td th:text="${especialidad.costo}}"></td>
+        <td th:text="${especialidad.costo}"></td>
+        <td></td>
       </tr>
       </tbody>
     </table>
