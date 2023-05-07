@@ -2,7 +2,7 @@ $(document).on("click","#btnagregar",function(){
 $("#txtidalumno").val("A000");
 $("#txtapealumno").val("");
 $("#txtnomalumno").val("");
-$("#txtproce").val("");
+$("#txtproce").val("N");
 $.ajax({
         type: "GET",
         url: "/Especialidad/listarEspecialidad",
@@ -45,9 +45,9 @@ $("#modalNuevo").modal("show");
 
 $(document).on("click","#btnguardar",function(){
     $.ajax({
-            type= "POST",
+            type : "POST",
             url: "/Alumno/registrarAlumno",
-            contentType :"application/json",}
+            contentType :"application/json",
             data: JSON.stringify({
             idalumno: $("#txtidalumno").val(),
             apealumno: $("#txtapealumno").val(),
@@ -56,9 +56,63 @@ $(document).on("click","#btnguardar",function(){
             proce:$("#txtproce").val()
             }),
             success: function(resultado){
-            alert(resultado.mensaje);
+                       if(resultado.respuesta){
+                           ListarAlumno();
+                       }
+                       alert(resultado.mensaje);
             }
     });
     $("#modalNuevo").modal("hide")
 });
 
+
+$(document).on("click", ".btneliminar", function(){
+    var idalumno = $(this).attr("data-idalumno");
+    $.ajax({
+        type: "DELETE",
+        url: "/Alumno/eliminarAlumno",
+        contentType: "application/json",
+        data: JSON.stringify({
+            idalumno: idalumno
+        }),
+        success: function(resultado){
+            if(resultado.respuesta){
+                ListarAlumno();
+            }
+            alert(resultado.mensaje);
+        }
+    });
+});
+
+function ListarAlumno(){
+    $.ajax({
+        type: "GET",
+        url: "/Alumno/listarAlumnos",
+        dataType: "json",
+        success: function(resultado){
+            $("#tblalumno > tbody").html("");
+            $.each(resultado, function(index, value){
+                $("#tblalumno > tbody").append("<tr>"+
+                    "<td>"+value.idalumno+"</td>"+
+                    "<td>"+value.apealumno+"</td>"+
+                    "<td>"+value.nomalumno+"</td>"+
+                     "<td>"+value.nomesp+"</td>"+
+                      "<td>"+value.proce+"</td>"+
+                    "<td>"+
+                        "<button type='button' class='btn btn-info btnactualizar'"+
+                                     "data-idalumno='"+value.idalumno+"'"+
+                                     "data-apealumno='"+value.apealumno+"'"+
+                                     "data-nomalumno='"+value.nomalumno+"'"+
+                                      "data-asientos='"+value.nomalumno+"'"+
+                                       "data-nomesp='"+value.nomesp+"'"+
+                                     "data-proce='"+value.proce+"'>Actualizar</button>"+
+                    "</td>"+
+                    "<td>"+
+                        "<button type='button' class='btn btn-danger btneliminar'"+
+                                     "data-idalumno='"+value.idalumno+"'"+
+                                     "data-apealumno='"+value.apealumno+"'>Eliminar</button>"+
+                    "</td></tr>");
+            })
+        }
+    })
+}
