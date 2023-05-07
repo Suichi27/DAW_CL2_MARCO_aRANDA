@@ -35,7 +35,7 @@
                 <td th:text="${alumno.especialidad.nomesp}"></td>
                 <td th:text="${alumno.proce}"></td>
                 <td>
-                    <button type="button" class="btn btn-info btnactualizar"
+                    <button id="btnactualizar"type="button" class="btn btn-info btnactualizar"
                             th:data-idalumno="${alumno.idalumno}"
                             th:data-apealumno="${alumno.apealumno}"
                             th:data-nomalumno="${alumno.nomalumno}"
@@ -62,7 +62,7 @@
             </div>
             <div class="modal-body">
                 <div class="mb-3">
-                    <label for="txtidalumno" class="form-label">IdAlumno</label>
+                    <label for="txtidalumno" class="form-label">ID</label>
                     <input type="text" class="form-control" id="txtidalumno">
                 </div>
 
@@ -72,16 +72,17 @@
                 </div>
                 <div class="mb-3">
                     <label for="txtnomalumno" class="form-label">Nombre</label>
-                    <input type="number" class="form-control" id="txtnomalumno">
+                    <input type="text" class="form-control" id="txtnomalumno">
                 </div>
                 <div class="mb-3">
                     <label for="cboesp" class="form-label">Especialidad</label>
                     <select id="cboesp" class="form-control"></select>
                 </div>
                 <div class="mb-3">
-                    <label for="txtproce" class="form-label">Nombre</label>
-                    <input type="number" class="form-control" id="txtproce">
+                    <label for="txtproce" class="form-label">Proce</label>
+                    <input type="text" class="form-control" id="txtproce">
                 </div>
+
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
