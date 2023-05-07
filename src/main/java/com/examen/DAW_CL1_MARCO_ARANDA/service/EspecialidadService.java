@@ -14,4 +14,16 @@ public class EspecialidadService {
 
     public List<Especialidad> listarEspecialidad() {return especialidadRepository.findAll();}
 
+    public void registrarEspecialidad(Especialidad especialidad){
+
+            especialidadRepository.save(especialidad);
+    }
+
+    public void eliminarEspecialidad(Especialidad especialidad){
+        especialidadRepository.deleteById(especialidad.getIdesp());
+    }
+
+
+
+
 }
