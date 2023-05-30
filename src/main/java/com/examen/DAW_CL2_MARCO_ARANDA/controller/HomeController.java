@@ -1,4 +1,4 @@
-package com.examen.DAW_CL1_MARCO_ARANDA.controller;
+package com.examen.DAW_CL2_MARCO_ARANDA.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

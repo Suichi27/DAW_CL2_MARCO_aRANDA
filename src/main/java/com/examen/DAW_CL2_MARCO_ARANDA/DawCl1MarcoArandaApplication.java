@@ -1,4 +1,4 @@
-package com.examen.DAW_CL1_MARCO_ARANDA;
+package com.examen.DAW_CL2_MARCO_ARANDA;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

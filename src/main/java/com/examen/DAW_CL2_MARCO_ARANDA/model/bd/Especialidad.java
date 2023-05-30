@@ -1,4 +1,4 @@
-package com.examen.DAW_CL1_MARCO_ARANDA.model.bd;
+package com.examen.DAW_CL2_MARCO_ARANDA.model.bd;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;

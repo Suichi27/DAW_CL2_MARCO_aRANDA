@@ -1,7 +1,7 @@
-package com.examen.DAW_CL1_MARCO_ARANDA.controller;
+package com.examen.DAW_CL2_MARCO_ARANDA.controller;
 
-import com.examen.DAW_CL1_MARCO_ARANDA.model.bd.Especialidad;
-import com.examen.DAW_CL1_MARCO_ARANDA.service.EspecialidadService;
+import com.examen.DAW_CL2_MARCO_ARANDA.model.bd.Especialidad;
+import com.examen.DAW_CL2_MARCO_ARANDA.service.EspecialidadService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

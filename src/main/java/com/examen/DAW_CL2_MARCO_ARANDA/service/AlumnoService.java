@@ -1,7 +1,7 @@
-package com.examen.DAW_CL1_MARCO_ARANDA.service;
+package com.examen.DAW_CL2_MARCO_ARANDA.service;
 
-import com.examen.DAW_CL1_MARCO_ARANDA.model.bd.Alumno;
-import com.examen.DAW_CL1_MARCO_ARANDA.repository.AlumnoRepository;
+import com.examen.DAW_CL2_MARCO_ARANDA.model.bd.Alumno;
+import com.examen.DAW_CL2_MARCO_ARANDA.repository.AlumnoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
